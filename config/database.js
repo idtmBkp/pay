@@ -1,7 +1,7 @@
 module.exports = {
-  username: 'g26tvdx0x451mkiz',
-  password: 'bg79e15404tse6pb',
+  username: process.env.username,
+  password: process.env.password,
   database: 'vmtgishsad7gmcay',
-  host: 'c9cujduvu830eexs.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+  host: process.env.host,
   dialect: 'mysql',
 };

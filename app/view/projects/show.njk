@@ -5,13 +5,13 @@
         <header>
           <h2>Exemplo de projeto</h2>
           <div class="addon">
-            <a href="" class="btn btn-danger">Excluir projeto</a>
+            <a href="/app/projects/destroy/{{activeId}}" class="btn btn-danger">Excluir projeto</a>
           </div>
         </header>
 
         <section id="content">
           <nav>
-          <a href="new.html" class="btn">Nova seção</a>
+          <a href="/app/projects/{{activeId}}/sections/new" class="btn">Nova seção</a>
             <div class="sessions">
             {% for section in sections %}
               <a href="/app/projects/{{activeId}}/sections/{{section.id}}">{{section.title}}</a>
@@ -21,7 +21,7 @@
 
           <article>
             <div class="project-header">
-              <h1>Selecione uma seção</h1>
+              <h1>Selecione ou crie uma seção para seu projeto</h1>
             </div>
           </article>
         </section>

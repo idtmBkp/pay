@@ -30,6 +30,7 @@ routes.get('/app/dashboard', dashboardController.index);
 
 routes.post('/app/projects/add', projectController.add);
 routes.get('/app/projects/:id', projectController.show);
+routes.get('/app/projects/destroy/:id', projectController.destroy);
 
 // 404
 routes.use((req, res) => res.render('error/404'));

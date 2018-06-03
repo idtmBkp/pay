@@ -114,6 +114,7 @@ textarea:focus {
 .wrapper {
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .wrapper .container {
@@ -239,6 +240,7 @@ textarea:focus {
   padding: 30px;
   align-self: stretch;
   margin: 0 0 30px;
+  height: 100%;
 }
 
 .wrapper section#main #content nav .sessions {

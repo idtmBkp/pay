@@ -3,6 +3,10 @@ const { Project, Section } = require('../models');
 module.exports = {
   async add(req, res, next) {
     try {
+      if (!req.body.title) {
+        req.flash('error', 'Preencha com um título do projeto');
+        return res.redirect('/app/dashboard');
+      }
       const project = await Project.create({
         ...req.body,
         UserId: req.session.user.id,
@@ -25,6 +29,18 @@ module.exports = {
         sections,
         activeId: req.params.id,
       });
+    } catch (err) {
+      return next(err);
+    }
+  },
+  async destroy(req, res, next) {
+    try {
+      await Project.destroy({
+        where: {
+          id: req.params.id,
+        },
+      });
+      return res.redirect('/app/dashboard');
     } catch (err) {
       return next(err);
     }

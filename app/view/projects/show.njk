@@ -1,0 +1,30 @@
+{% extends 'layouts/dashboard.njk' %}
+{% block body %}
+<section id="main">
+      <div class="container">
+        <header>
+          <h2>Exemplo de projeto</h2>
+          <div class="addon">
+            <a href="" class="btn btn-danger">Excluir projeto</a>
+          </div>
+        </header>
+
+        <section id="content">
+          <nav>
+          <a href="new.html" class="btn">Nova seção</a>
+            <div class="sessions">
+            {% for section in sections %}
+              <a href="/app/projects/{{activeId}}/sections/{{section.id}}">{{section.title}}</a>
+              {% endfor %}
+            </div>
+          </nav>
+
+          <article>
+            <div class="project-header">
+              <h1>Selecione uma seção</h1>
+            </div>
+          </article>
+        </section>
+      </div>
+    </section>
+{% endblock %}

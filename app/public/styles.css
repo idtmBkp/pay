@@ -272,6 +272,7 @@ textarea:focus {
 .wrapper section#main #content nav .btn {
   width: 100%;
   text-align: center;
+  margin-bottom: 6px;
 }
 
 .wrapper section#main #content article {

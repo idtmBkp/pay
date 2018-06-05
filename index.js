@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const flash = require('connect-flash');
 const session = require('express-session');
-
+const methodOverride = require('method-override');
 const routes = require('./app/routes');
 
 const sessionConfig = require('./config/session');
@@ -22,6 +22,7 @@ app.set('view engine', 'njk');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(session(sessionConfig));
 app.use(flash());
+app.use(methodOverride('_method'));
 
 app.use('/', routes);
 

@@ -1,0 +1,8 @@
+<nav>
+  <div class="sessions">
+    {% for section in sections %}
+      <a href="/app/projects/{{activeId}}/sections/{{section.id}}">{{section.title}}</a>
+    {% endfor %}
+  </div>
+  <a href="/app/projects/{{activeId}}/sections/novo" class="btn">Nova seção</a>
+</nav>

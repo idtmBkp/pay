@@ -48,7 +48,7 @@ module.exports = {
       return next(err);
     }
   },
-  async novo(req, res, next) {
+  async newSection(req, res, next) {
     try {
       const sections = await Section.findAll({
         include: [Project],

@@ -3,27 +3,27 @@
 <section id="main">
       <div class="container">
         <header>
-          <h2>Exemplo de projeto</h2>
+          <h2>{{project.title}}</h2>
           <div class="addon">
-            <a href="/app/projects/destroy/{{activeId}}" class="btn btn-danger">Excluir projeto</a>
+            <a href="/app/projects/destroy/{{projectId}}" class="btn btn-danger">Excluir projeto</a>
           </div>
         </header>
 
         <section id="content">
           <nav>
-          <a href="/app/projects/{{activeProjectId}}/sections/new" class="btn">Nova seção</a>
+          <a href="/app/projects/{{projectId}}/sections/new" class="btn">Nova seção</a>
             <div class="sessions">
-            {% for section in sections %}
-              <a href="/app/projects/{{activeProjectId}}/sections/{{section.id}}">{{section.title}}</a>
+            {% for sec in sections %}
+              <a href="/app/projects/{{projectId}}/sections/{{sec.id}}">{{sec.title}}</a>
               {% endfor %}
             </div>
           </nav>
 
           <article>
             <div class="project-header">
-              <h1>Selecione ou crie uma seção para seu projeto</h1>
+              <h1>{{section.title}}</h1>
             </div>
-            {{ section.content }}
+            {{ section.formatedContent | safe }}
           </article>
         </section>
       </div>

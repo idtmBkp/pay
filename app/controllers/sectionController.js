@@ -1,28 +1,7 @@
-<<<<<<< HEAD
-const { Project, Section } = require('../models');
-
-module.exports = {
-  async show(req, res, next) {
-    try {
-      const { projectId, id } = req.params;
-      const section = await Section.findById(id);
-      const project = await Project.findById(projectId);
-      const sections = await Section.findAll({
-        where: {
-          ProjectId: projectId,
-        },
-      });
-      res.render('sections/show', {
-        section,
-        project,
-        sections,
-        activeProjectId: projectId,
-        activeSection: id,
-      });
-    } catch (err) {
-      next(err);
-=======
-const { Section } = require('../models');
+const {
+  Project,
+  Section,
+} = require('../models');
 
 module.exports = {
   async add(req, res, next) {
@@ -39,7 +18,32 @@ module.exports = {
       return res.redirect(`/app/projects/${req.params.id}/sections/${section.id}`);
     } catch (err) {
       return next(err);
->>>>>>> c5e52b94cec5a10fe6afd86bb07701a2e005e53e
+    }
+  },
+  async show(req, res, next) {
+    try {
+      const {
+        projectId,
+        id,
+      } = req.params;
+      const sections = await Section.findAll({
+        include: [Project],
+        where: {
+          ProjectId: projectId,
+        },
+      });
+      const project = await Project.findById(projectId);
+      const section = await Section.findById(id);
+      return res.render('sections/show', {
+        User: req.session.user.name,
+        section,
+        sections,
+        project,
+        activeId: id,
+        projectId,
+      });
+    } catch (err) {
+      return next(err);
     }
   },
 };

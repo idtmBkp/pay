@@ -67,4 +67,14 @@ module.exports = {
       return next(err);
     }
   },
+  async modify(req, res, next) {
+    try {
+      const { id } = req.params;
+      const project = await Project.findById(id);
+      await project.update(req.body);
+      return res.redirect(`/app/projects/${id}`);
+    } catch (err) {
+      return next(err);
+    }
+  },
 };

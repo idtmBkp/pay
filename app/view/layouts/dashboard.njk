@@ -12,17 +12,6 @@
   <script src="/main.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
   <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
-  <script>
-  $(document).ready(function(){
-    $('.mde').each(function () {
-      var simplemde = new SimpleMDE({
-        element: this,
-        spellChecker: false,
-        status: false,
-      });
-    });
-  });
-  </script>
 </head>
 <body>
 <div class="wrapper">
@@ -31,5 +20,6 @@
 {% block body %}
 {% endblock %}
 </div>
+
 </body>
 </html>

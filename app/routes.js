@@ -32,6 +32,7 @@ routes.get('/app/dashboard', dashboardController.index);
 routes.post('/app/projects/add', projectController.add);
 routes.get('/app/projects/:id', projectController.show);
 routes.get('/app/projects/destroy/:id', projectController.destroy);
+routes.put('/app/projects/edit/:id', projectController.modify);
 
 // SECTIONS
 routes.get('/app/projects/:id/sections/new', projectController.newSection);
@@ -39,6 +40,7 @@ routes.post('/app/projects/:id/sections/add', sectionController.add);
 routes.get('/app/projects/:projectId/sections/:id', sectionController.show);
 routes.get('/app/projects/:projectId/sections/edit/:id', sectionController.edit);
 routes.put('/app/projects/:projectId/sections/modify/:id', sectionController.modify);
+routes.get('/app/projects/:projectId/sections/destroy/:id', sectionController.destroy);
 
 // 404
 routes.use((req, res) => res.render('error/404'));

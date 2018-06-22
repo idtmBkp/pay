@@ -29,7 +29,7 @@ module.exports = {
       return res.render('projects/show', {
         User: req.session.user.name,
         sections,
-        activeId: req.params.id,
+        activeProjectId: req.params.id,
         project,
       });
     } catch (err) {
@@ -60,7 +60,7 @@ module.exports = {
       return res.render('sections/novo', {
         User: req.session.user.name,
         sections,
-        activeId: req.params.id,
+        activeProjectId: req.params.id,
         project,
       });
     } catch (err) {

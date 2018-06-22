@@ -54,8 +54,12 @@ textarea:focus {
 }
 
 .btn.btn-edit {
-  background: #6bd59c;
+  background: #76e1a8;
   color: #fff;
+}
+
+.btn.btn-edit:hover {
+  background: #6bd59c;
 }
 
 .auth-wrapper {
@@ -305,8 +309,8 @@ textarea:focus {
   font-size: 14px;
 }
 
-.wrapper section#main #content article .project-header a.btn-edit {
-  color: #fff;
+.wrapper section#main #content article .project-header a.edit {
+  color: #6bd59c;
 }
 
 .wrapper section#main #content article h1 {

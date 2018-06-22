@@ -5,10 +5,11 @@
         {% include 'partials/headProject.njk' %}
         <section id="content">
           {% include 'partials/nav.njk' %}
+
           <article>
-            <form action="/app/projects/{{activeProjectId}}/sections/add" method="POST">
-              <input type="text" name="title" placeholder="Digite o nome da seção">
-              <textarea class="mde" id="content" name="content" placeholder="Conteúdo da seção"></textarea>
+            <form action="/app/projects/{{activeProjectId}}/sections/modify/{{activeSectionId}}?_method=PUT" method="POST">
+              <input type="text" name="title" value="{{section.title}}">
+              <textarea class="mde" id="content" name="content">{{section.content}}</textarea>
               <button type="submit" class="btn">Salvar</button>
             </form>
           </article>

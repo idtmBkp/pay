@@ -34,8 +34,13 @@ routes.get('/app/projects/:id', projectController.show);
 routes.get('/app/projects/destroy/:id', projectController.destroy);
 
 // SECTIONS
+<<<<<<< HEAD
 
 routes.get('/app/projects/:projectId/sections/:id', sectionController.show);
+=======
+routes.get('/app/projects/:id/sections/novo', projectController.novo);
+routes.post('/app/projects/:id/sections/add', sectionController.add);
+>>>>>>> c5e52b94cec5a10fe6afd86bb07701a2e005e53e
 // 404
 routes.use((req, res) => res.render('error/404'));
 

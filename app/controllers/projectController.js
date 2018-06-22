@@ -20,14 +20,17 @@ module.exports = {
   async show(req, res, next) {
     try {
       const sections = await Section.findAll({
+        include: [Project],
         where: {
           ProjectId: req.params.id,
         },
       });
+      const project = await Project.findById(req.params.id);
       return res.render('projects/show', {
         User: req.session.user.name,
         sections,
         activeId: req.params.id,
+        project,
       });
     } catch (err) {
       return next(err);
@@ -41,6 +44,25 @@ module.exports = {
         },
       });
       return res.redirect('/app/dashboard');
+    } catch (err) {
+      return next(err);
+    }
+  },
+  async novo(req, res, next) {
+    try {
+      const sections = await Section.findAll({
+        include: [Project],
+        where: {
+          ProjectId: req.params.id,
+        },
+      });
+      const project = await Project.findById(req.params.id);
+      return res.render('sections/novo', {
+        User: req.session.user.name,
+        sections,
+        activeId: req.params.id,
+        project,
+      });
     } catch (err) {
       return next(err);
     }

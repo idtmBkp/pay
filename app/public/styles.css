@@ -135,6 +135,10 @@ textarea:focus {
   justify-content: space-between;
   align-items: center;
 }
+.wrapper #header h1 a {
+  text-decoration: none;
+  color: #fff;
+}
 
 .wrapper #header .user-info {
   display: flex;

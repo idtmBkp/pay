@@ -13,11 +13,12 @@
           {% include 'partials/nav.njk' %}
 
           <article>
-            <div class="project-header">
-              <h1>Selecione ou crie uma seção para seu projeto</h1>
-            </div>
+            <form action="/app/projects/{{activeId}}/sections/add" method="POST">
+              <input type="text" name="title" placeholder="Digite o nome da seção">
+              <textarea class="mde" id="content" name="content" placeholder="Conteúdo da seção"></textarea>
+              <button type="submit" class="btn">Salvar</button>
+            </form>
           </article>
-        </section>
       </div>
     </section>
 {% endblock %}

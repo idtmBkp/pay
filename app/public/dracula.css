@@ -10,7 +10,7 @@
  * @author Zeno Rocha <hi@zenorocha.com>
  */
 
- pre.hljs {
+.hljs {
   display: block;
   overflow-x: auto;
   padding: 0.5em;

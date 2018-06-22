@@ -22,6 +22,8 @@
           <article>
             <div class="project-header">
               <h1>{{section.title}}</h1>
+              <a href="/app/projects/{{projectId}}/sections/{{activeId}}/edit" class="btn btn-edit">Editar seção</a>
+              <a href="/app/projects/{{projectId}}/sections/{{activeId}}/destroy">Remover seção</a>
             </div>
             {{ section.formatedContent | safe }}
           </article>

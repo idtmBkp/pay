@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700");
-
 html,
 body {
   height: 100%;
@@ -52,6 +51,11 @@ textarea:focus {
 
 .btn.btn-danger:hover {
   background: #d05959;
+}
+
+.btn.btn-edit {
+  background: #6bd59c;
+  color: #fff;
 }
 
 .auth-wrapper {
@@ -135,6 +139,7 @@ textarea:focus {
   justify-content: space-between;
   align-items: center;
 }
+
 .wrapper #header h1 a {
   text-decoration: none;
   color: #fff;
@@ -298,6 +303,10 @@ textarea:focus {
   color: #e06666;
   text-decoration: none;
   font-size: 14px;
+}
+
+.wrapper section#main #content article .project-header a.btn-edit {
+  color: #fff;
 }
 
 .wrapper section#main #content article h1 {

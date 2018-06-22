@@ -4,6 +4,7 @@ const routes = express.Router();
 const authController = require('./controllers/authController');
 const dashboardController = require('./controllers/dashboardController');
 const projectController = require('./controllers/projectController');
+const sectionController = require('./controllers/sectionController');
 
 const authMiddleware = require('./middlewares/auth');
 const guestMiddleware = require('./middlewares/guest');
@@ -32,6 +33,9 @@ routes.post('/app/projects/add', projectController.add);
 routes.get('/app/projects/:id', projectController.show);
 routes.get('/app/projects/destroy/:id', projectController.destroy);
 
+// SECTIONS
+
+routes.get('/app/projects/:projectId/sections/:id', sectionController.show);
 // 404
 routes.use((req, res) => res.render('error/404'));
 
